@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <!-- ICONS -->
+    <script src="https://kit.fontawesome.com/3d3023d07e.js" crossorigin="anonymous"></script>
+    <!-- STYLE SHEET -->
+    <link rel="stylesheet" href="/style.css">
+
+    <title>Shopping List App</title>
+</head>
+<body>
+    <section class="shoppinglist-container">
+        <h2>Shopping List</h2> 
+        <section class="shopping">
+            <form action="/" method="POST" class="shoppinglist-header">
+                <input type="text" name="item" value="item">
+                <input type="text" name='quantity' value='quantity' placeholder="how many?"> 
+                <button type="submit"><span class="fas fa-plus"></span>Add</button>
+            </form>
+            <ul class="shopping-list">
+                <% shoppinglist.forEach(data => { %>
+                <li class="shoppinglist-item">
+                    <div class="shoppinglist-item-quantity">
+                        <%= data.quantity %>
+                    </div>
+                    <div class="shoppinglist-item-name">
+                        <%= data.item %>
+                    </div>
+                    
+                    <a href="/edit/<%=data._id %>" 
+                        class="edit"><span class="fas fa-edit"></span></a>
+                    <a href="/remove/<%=data._id %> "
+                        class="remove"><span class="fas fa-times"></span></a>
+                </li>
+                <% }) %>
+            </ul>
+        </section>
+    </section>
+</body>
+</html>

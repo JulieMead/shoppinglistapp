@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- STYLE SHEET -->
+    <link rel="stylesheet" href="/style.css">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <!-- ICONS -->
+    <script src="https://kit.fontawesome.com/3d3023d07e.js" crossorigin="anonymous"></script>
+
+    <title>Edit List Item</title>
+</head>
+<body>
+    <section class="shoppinglist-container">
+        <h2>Edit List Item</h2> 
+        <section class="shopping">
+            <ul class="shopping-list">
+                <% shoppinglist.forEach(data => { %>
+                    <% if (data._id==idItem) { %>
+                        <li class="shoppinglist-item">
+                            <form action="/edit/<%= data._id %>" method ="POST">
+                                <input type="text" value="<%=data.item %>" name = 'item'>
+                                <input type="text" value='<%=data.quantity %>' name='quantity'>
+                                <button type="submit" class="confirm">Confirm</button>
+                                <a href="/" class="cancel">Cancel</a>
+                            </form>
+                        </li>
+                        <% } else { %>
+                                <li class="shoppinglist-item">
+                                    <div class="shoppinglist-item-name">
+                                        <%= data.item %>
+                                    </div>
+                                    <div class="shoppinglist-item-name">
+                                        <%= data.quantity %>
+                                    </div>
+                                    <a href="/edit/<%= data._id %>" class="edit"><span class="fas fa-edit"></span>
+                                    </a>
+                                    <a href="/remove/<%= data._id %>" class="remove"><span class="fas fa-times"></span>
+                                    </a>
+                                </li>
+                                <% } %>
+                                <% }) %>
+                    
+            </ul>
+        </section>
+    </section>
+</body>
+</html>

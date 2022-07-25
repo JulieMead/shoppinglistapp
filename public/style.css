@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(142, 170, 140);
+    font-family: "Ubuntu Mono", sans-serif;
+}
+
+.shoppinglist-container {
+    color: rgb(245, 249, 253);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 600px;
+    padding: 20px;
+    background: rgba(62, 131, 88, 0.356);
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* 
+.shopping {
+    width: 500px;
+} */
+
+h2 {
+    padding: 10px;
+    font-size: 2rem;
+}
+
+input {
+    font-family: "Ubuntu Mono", sans-serif;
+    margin-bottom: 2px;
+    padding: 5px;
+    border-radius: 5px;
+    height: 30px;
+}
+
+.shoppinglist-header button {
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    padding: 10px;
+    background: green;
+    font-family: "Ubuntu Mono", sans-serif;
+    font-size: 1rem;
+}
+span {
+    padding-right: 5px;
+}
+
+ul {
+    list-style: none;
+}
+
+.shoppinglist-item {
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background:rgba(4, 5, 4, 0.151);
+    display: flex;
+    flex-direction: row;
+}
+
+.shoppinglist-item-name {
+    margin-left: 10px;
+}
+
+.edit, .remove {
+    color: black;
+ 
+}
+.shoppinglist-item form {
+    width: 100%;
+    display: flex;
+}
+
+.shoppinglist-item .confirm {
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    background-color: green;
+    margin-left: 5px;
+    max-height: 30px;
+    font-family: "Ubuntu Mono", sans-serif;
+    display: block;
+    
+}
+
+.shoppinglist-item .cancel {
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    background-color: rgb(128, 0, 0);
+    margin-left: 5px;
+    max-height: 30px;
+    font-family: "Ubuntu Mono", sans-serif;
+    display: block;   
+}
+
+.shoppinglist-item div {
+    flex-grow: 2;
+}
+
+.shoppinglist-item .edit {
+    color: rgb(0, 13, 128);
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.shoppinglist-item .remove {
+    color: rgb(128, 0, 0);
+    cursor: pointer;
+    text-decoration: none;
+}
